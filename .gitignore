@@ -1,0 +1,10 @@
+# Visual Studio files
+/.vs/
+
+/src/api/*/bin/
+/src/api/*/obj/
+/src/api/*/*.csproj.user
+/src/mobile/*/bin/
+/src/mobile/*/obj/
+/src/mobile/*/*.csproj.user
+
