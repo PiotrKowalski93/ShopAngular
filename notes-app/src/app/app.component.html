@@ -1,7 +1,12 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<nav class="navbar navbar-light bg-light">
-  <span class="navbar-brand mb-0 h2">MakeYourNotes App</span>
-</nav>
-<app-card-list [products]="products"></app-card-list>
-  
-
+<div class="row no-gutters bg-light">
+  <div class="col-10 my-2">
+    <a routerLink="" class="ml-2">SampleShop</a>
+  </div>
+  <div class="col-1 my-2 mx-auto" style="text-align: right;">
+    <a routerLink="/login" class="btn btn-primary">Login</a>
+  </div>
+  <div class="col-1 my-2" style="text-align: center;">
+    <a routerLink="/register" class="btn btn-primary">Register</a>
+  </div>
+</div>
+<router-outlet></router-outlet>
