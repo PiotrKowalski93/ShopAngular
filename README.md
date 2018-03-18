@@ -5,8 +5,8 @@ Frontend:
  - Bootstrap 4
  
 Backend:
- - .Net Core 2 Rest Api
- - EntityFramework as ORM
+ - .Net Web API
+ - EntityFramework 6
  - MsSql Database
  
 IDE:
