@@ -12,3 +12,7 @@ Backend:
 IDE:
   - Visual Studio 2015
   - Visual Studio Code
+
+Version Control:
+	- Git
+	- Tortoise Git
