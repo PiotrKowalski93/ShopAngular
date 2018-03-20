@@ -9,9 +9,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
 
 import { UserService } from '../app/_services/user.service'
+import { SessionService } from '../app/_services/session.service'
 
 const appRoutes: Routes = [
   {
@@ -37,12 +37,12 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    Router,
     RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
   providers: [
-    UserService
+    UserService,
+    SessionService
   ],
   bootstrap: [AppComponent]
 })

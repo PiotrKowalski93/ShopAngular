@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../app/_services/session.service';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  sessionStarted: boolean;
+
+  loggingButtonText: string;
+  logout: string = 'Logout';
+  login: string = 'Login';
+
+  constructor(private sessionService: SessionService) {
+  }
 
   public products: Array<any> =
   [
@@ -17,4 +26,20 @@ export class AppComponent {
     { productName: 'Test5' },
     { productName: 'Test6' }
   ];
+
+  ogOnInit() {
+
+    console.log('ogOnInit() triggered.');
+
+    var session = this.sessionService.getSession();
+
+    if (session.userEmail != null) {
+      this.sessionStarted = true;
+      this.loggingButtonText = this.logout;
+    }
+    else {
+      this.sessionStarted = false;
+      this.loggingButtonText = this.login;
+    }
+  }
 }
