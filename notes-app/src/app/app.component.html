@@ -1,12 +1,14 @@
-<div class="row no-gutters bg-light">
+<div class="row no-gutters" id="navBg">
   <div class="col-10 my-2">
-    <a routerLink="" class="ml-2">SampleShop</a>
+    <a routerLink="" class="ml-2">Gentelman's Shop</a>
   </div>
   <div class="col-1 my-2 mx-auto" style="text-align: right;">
-    <a routerLink="/login" class="btn btn-primary">Login</a>
+    <a routerLink="/login" class="btn btn-primary" id="navBtnBg">Login</a>
   </div>
   <div class="col-1 my-2" style="text-align: center;">
     <a routerLink="/register" class="btn btn-primary">Register</a>
   </div>
 </div>
-<router-outlet></router-outlet>
+<div id="bg">
+  <router-outlet></router-outlet>
+</div>

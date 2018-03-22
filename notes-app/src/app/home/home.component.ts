@@ -24,5 +24,4 @@ export class HomeComponent implements OnInit {
       this.sayHelloText = 'Hello stranger!';
     }
   }
-
 }

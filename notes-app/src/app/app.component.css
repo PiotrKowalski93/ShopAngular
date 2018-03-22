@@ -1,0 +1,15 @@
+#bg {
+    background-image: url('images/frontPagePhoto.jpeg');
+    position: fixed;
+    background-size: cover;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+#navBg {
+    background-color: #432114;
+}
+
+#navBtnBg {
+    background-color: #DC774F;
+}
