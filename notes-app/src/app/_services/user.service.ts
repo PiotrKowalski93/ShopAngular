@@ -23,6 +23,6 @@ export class UserService {
     }
 
     registerUser(user: User) {
-
+        console.log(user.Name + ", " + user.SecondName + ", " + user.Password + ", " + user.PhoneNumber + ", " + user.Email)
     }
 }

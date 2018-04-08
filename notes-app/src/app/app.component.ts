@@ -27,7 +27,7 @@ export class AppComponent {
     { productName: 'Test6' }
   ];
 
-  ogOnInit() {
+  ngOnInit() {
 
     console.log('ogOnInit() triggered.');
 

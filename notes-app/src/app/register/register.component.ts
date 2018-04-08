@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../_model/user';
+import { UserService } from '../_services/user.service'
+import { EncryptionService } from '../_services/encryption.service'
 
 @Component({
   selector: 'app-register',
@@ -8,9 +11,17 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  user: User = new User();
+
+  constructor(private userService: UserService, private encryptionService: EncryptionService) { 
+    
+  }
 
   ngOnInit() {
   }
 
+  register() {
+    this.user.Password = this.encryptionService.encruptPassword(this.user.Password)
+    this.userService.registerUser(this.user);
+  }
 }

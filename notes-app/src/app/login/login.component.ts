@@ -13,7 +13,7 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent implements OnInit {
 
-  users: User[];S
+  users: User[];
 
   userEmail: string;
   userPassword: string;
