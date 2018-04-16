@@ -5,6 +5,7 @@ import { SessionService } from '../_services/session.service';
 import { HttpClient } from '@angular/common/http'
 import { User } from '../_model/user'
 import { Router } from '@angular/router'
+import { EncryptionService } from '../_services/encryption.service';
 
 @Component({
   selector: 'app-login',
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private userService: UserService,
     private sessionService: SessionService,
+    private encryptionService: EncryptionService,
     private router: Router) { }
 
   ngOnInit() {
@@ -35,7 +37,10 @@ export class LoginComponent implements OnInit {
         for (var index = 0; index < this.users.length; index++) {
           var element = this.users[index] as User;
 
-          if (element.Email === this.userEmail && element.Password === this.userPassword) {
+          let encryptedPassword = this.encryptionService.encryptPassword(this.userPassword)
+          console.log(element.Email)
+          console.log(encryptedPassword)
+          if (element.Email === this.userEmail && element.Password === encryptedPassword) {
             this.sessionService.openNewSession(element.Name, element.Email);
             this.router.navigate(['']);
           }
