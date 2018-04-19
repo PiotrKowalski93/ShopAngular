@@ -1,10 +1,14 @@
 import { Session } from '../_model/session'
-import { Injectable } from '@angular/core'
+import { Injectable, EventEmitter } from '@angular/core'
 
 @Injectable()
 export class SessionService {
 
     session: Session;
+    sessionStateChanged: EventEmitter<boolean> = new EventEmitter()
+
+    constructor() {
+    }
 
     getSession() {
         return this.session;
@@ -14,11 +18,15 @@ export class SessionService {
         this.session = new Session();
         this.session.userName = userName;
         this.session.userEmail = userEmail;
+
+        this.sessionStateChanged.emit(true);
     }
 
     closeSession()
     {
         this.session = null;
+
+        this.sessionStateChanged.emit(false);
     }
 
     isSessionOpen():boolean

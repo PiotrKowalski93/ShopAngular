@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../app/_services/user.service'
 import { SessionService } from '../app/_services/session.service'
 import { EncryptionService } from '../app/_services/encryption.service'
+import { SmsService } from '../app/_services/sms.service'
 
 const appRoutes: Routes = [
   {
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
   providers: [
     UserService,
     SessionService,
-    EncryptionService
+    EncryptionService,
+    SmsService
   ],
   bootstrap: [AppComponent]
 })

@@ -23,7 +23,7 @@ export class UserService {
 
     }
 
-    registerUser(user: User) : Observable<User> {
+    registerUser(user: User): Observable<User> {
 
         const httpOptions = {
             headers: new HttpHeaders({

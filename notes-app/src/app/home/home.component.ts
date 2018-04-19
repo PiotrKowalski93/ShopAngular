@@ -11,6 +11,11 @@ export class HomeComponent implements OnInit {
   sayHelloText: string;
 
   constructor(private sessionService: SessionService) {
+    this.sessionService.sessionStateChanged.subscribe((isSessionStarted) => {
+      if (!isSessionStarted) {
+        this.sayHelloText = "Hello stranger!";
+      }
+    })
   }
 
   ngOnInit() {
@@ -19,7 +24,7 @@ export class HomeComponent implements OnInit {
 
     if (this.sessionService.isSessionOpen()) {
       var userName = this.sessionService.getSession().userName;
-      this.sayHelloText = 'hello ' + userName;
+      this.sayHelloText = 'Hello ' + userName;
     } else {
       this.sayHelloText = 'Hello stranger!';
     }

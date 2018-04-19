@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../app/_services/session.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,36 +11,15 @@ export class AppComponent {
 
   sessionStarted: boolean;
 
-  loggingButtonText: string;
-  logout: string = 'Logout';
-  login: string = 'Login';
-
-  constructor(private sessionService: SessionService) {
+  constructor(private sessionService: SessionService, private router: Router) {
+    this.sessionService.sessionStateChanged.subscribe((isSessionStarted) => {
+      console.log(isSessionStarted);
+      this.sessionStarted = isSessionStarted;
+    })
   }
 
-  public products: Array<any> =
-  [
-    { productName: 'Test1' },
-    { productName: 'Test2' },
-    { productName: 'Test3' },
-    { productName: 'Test4' },
-    { productName: 'Test5' },
-    { productName: 'Test6' }
-  ];
-
-  ngOnInit() {
-
-    console.log('ogOnInit() triggered.');
-
-    var session = this.sessionService.getSession();
-
-    if (session.userEmail != null) {
-      this.sessionStarted = true;
-      this.loggingButtonText = this.logout;
-    }
-    else {
-      this.sessionStarted = false;
-      this.loggingButtonText = this.login;
-    }
+  logout() {
+    this.sessionService.closeSession();
   }
+
 }

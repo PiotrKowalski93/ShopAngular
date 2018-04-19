@@ -9,10 +9,9 @@
 
 namespace ShopService.Models
 {
-    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-
+    
     public partial class Users
     {
         public int Id { get; set; }
