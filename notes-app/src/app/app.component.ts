@@ -13,7 +13,6 @@ export class AppComponent {
 
   constructor(private sessionService: SessionService, private router: Router) {
     this.sessionService.sessionStateChanged.subscribe((isSessionStarted) => {
-      console.log(isSessionStarted);
       this.sessionStarted = isSessionStarted;
     })
   }

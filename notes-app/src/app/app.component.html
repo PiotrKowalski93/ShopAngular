@@ -3,24 +3,20 @@
     <a routerLink="" class="ml-2">Gentelman's Shop</a>
   </div>
 
-  <!-- <ng-container *ngIf="sessionStarted; then logout else login"></ng-container>
-
-  <ng-template #login ><div>Login</div></ng-template>
-  <ng-template #logout ><div>Logout</div></ng-template> -->
   <div *ngIf="!sessionStarted">
     <div class="col-1 my-2 mx-auto" style="text-align: right;">
-      <a routerLink="/login" class="btn btn-primary" id="navBtnBg">Login</a>
+      <a routerLink="/login" class="btn btn-primary" >Login</a>
     </div>
   </div>
 
   <div *ngIf="sessionStarted">
       <div class="col-1 my-2 mx-auto" style="text-align: right;">
-        <a routerLink="" class="btn btn-primary" id="navBtnBg" (click)="logout()">Logout</a>
+        <a routerLink="" class="btn btn-primary" (click)="logout()">Logout</a>
       </div>
     </div>
 
   <div class="col-1 my-2" style="text-align: center;">
-    <a routerLink="/register" class="btn btn-primary" id="navBtnBg">Register</a>
+    <a routerLink="/register" class="btn btn-primary" >Register</a>
   </div>
 </div>
 <div id="bg">

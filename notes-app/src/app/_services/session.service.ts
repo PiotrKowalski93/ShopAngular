@@ -25,7 +25,6 @@ export class SessionService {
     closeSession()
     {
         this.session = null;
-
         this.sessionStateChanged.emit(false);
     }
 

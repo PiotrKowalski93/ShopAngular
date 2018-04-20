@@ -14,13 +14,14 @@ export class HomeComponent implements OnInit {
     this.sessionService.sessionStateChanged.subscribe((isSessionStarted) => {
       if (!isSessionStarted) {
         this.sayHelloText = "Hello stranger!";
+      } else {
+        var userName = this.sessionService.getSession().userName;
+        this.sayHelloText = 'Hello ' + userName;
       }
     })
   }
 
   ngOnInit() {
-
-    console.log('ngOnInit() Home triggered.')
 
     if (this.sessionService.isSessionOpen()) {
       var userName = this.sessionService.getSession().userName;
